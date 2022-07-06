@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?at5rb7');
+  src:  url('../fonts/icomoon.eot?at5rb7#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?at5rb7') format('truetype'),
+    url('../fonts/icomoon.woff?at5rb7') format('woff'),
+    url('../fonts/icomoon.svg?at5rb7#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-UserCircle:before {
+  content: "\e906";
+  color: #fff;
+}
+.icon-ChatTeardropText:before {
+  content: "\e907";
+  color: #fff;
+}
+.icon-Heart:before {
+  content: "\e908";
+  color: #fff;
+}
+.icon-MagnifyingGlass:before {
+  content: "\e909";
+  color: #fff;
+}
+.icon-Plus:before {
+  content: "\e90a";
+  color: #fff;
+}
+.icon-CaretDown:before {
+  content: "\e90b";
+  color: #fff;
+}
+.icon-button_next .path1:before {
+  content: "\e900";
+  color: rgb(37, 37, 37);
+}
+.icon-button_next .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-button_next .path3:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-button_previous .path1:before {
+  content: "\e903";
+  color: rgb(37, 37, 37);
+}
+.icon-button_previous .path2:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.icon-button_previous .path3:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
