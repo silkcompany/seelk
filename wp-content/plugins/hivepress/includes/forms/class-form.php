@@ -424,22 +424,6 @@ abstract class Form {
 			$output .= '<div class="hp-form__messages" data-component="messages"></div>';
 		}
 
-
-		// Render footer.
-		if ( $this->button || $this->footer ) {
-			$output .= '<div class="hp-form__footer hp-form__fields icon-MagnifyingGlass">';
-
-			if ( $this->button ) {
-				$output .= $this->button->render();
-			}
-
-			if ( $this->footer ) {
-				$output .= $this->footer;
-			}
-
-			$output .= '</div>';
-		}
-
 		// Render fields.
 		if ( $this->fields ) {
 			$output .= '<div class="hp-form__fields">';
@@ -478,7 +462,20 @@ abstract class Form {
 			$output .= '</div>';
 		}
 
-		
+		// Render footer.
+		if ( $this->button || $this->footer ) {
+			$output .= '<div class="hp-form__footer">';
+
+			if ( $this->button ) {
+				$output .= $this->button->render();
+			}
+
+			if ( $this->footer ) {
+				$output .= $this->footer;
+			}
+
+			$output .= '</div>';
+		}
 
 		$output .= '</form>';
 

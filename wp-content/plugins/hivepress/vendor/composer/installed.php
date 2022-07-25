@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => '1.6.9',
-        'version' => '1.6.9.0',
-        'reference' => '317543dd6956202ae58b1fb50281d9514d8cd1f4',
+        'pretty_version' => '1.6.10',
+        'version' => '1.6.10.0',
+        'reference' => 'f91abc47d444457dc163a8d0c2de40088d1b3004',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => '1.6.9',
-            'version' => '1.6.9.0',
-            'reference' => '317543dd6956202ae58b1fb50281d9514d8cd1f4',
+            'pretty_version' => '1.6.10',
+            'version' => '1.6.10.0',
+            'reference' => 'f91abc47d444457dc163a8d0c2de40088d1b3004',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -128,8 +128,8 @@
             'dev_requirement' => false,
         ),
         'symfony/deprecation-contracts' => array(
-            'pretty_version' => 'v2.5.1',
-            'version' => '2.5.1.0',
+            'pretty_version' => 'v2.5.2',
+            'version' => '2.5.2.0',
             'reference' => 'e8b495ea28c1d97b5e0c121748d6f9b53d075c66',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
