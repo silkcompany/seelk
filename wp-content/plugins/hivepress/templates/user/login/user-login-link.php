@@ -5,7 +5,7 @@ defined( 'ABSPATH' ) || exit;
 if ( is_user_logged_in() ) :
 	?>
 	<a href="<?php echo esc_url( hivepress()->router->get_url( 'user_account_page' ) ); ?>" class="hp-menu__item hp-menu__item--user-account hp-link">
-		<i class="hp-icon fas fa-user"></i>
+		<i style="font-size: 30px;" class="hp-icon icon-UserCircle"></i>
 		<span><?php echo esc_html( hivepress()->request->get_user()->get_username() ); ?></span>
 		<?php if ( hivepress()->request->get_context( 'notice_count' ) ) : ?>
 			<small><?php echo esc_html( hivepress()->request->get_context( 'notice_count' ) ); ?></small>

@@ -9,7 +9,7 @@
 		<!-- <link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/vendor/hivepress/hivetheme/assets/css/iconsfont.css"> -->
 		<?php wp_head(); ?>
 	</head>
-	
+	<?php $column_width = 4; ?>
 	<body <?php body_class(); ?>>
 		<?php
 		if ( function_exists( 'wp_body_open' ) ) :
