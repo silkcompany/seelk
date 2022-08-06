@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the HivePress plugin.
 msgid ""
 msgstr ""
-"Project-Id-Version: HivePress 1.6.10\n"
+"Project-Id-Version: HivePress 1.6.11\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/hivepress\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2022-07-02T11:57:29+00:00\n"
+"POT-Creation-Date: 2022-08-05T22:51:22+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.6.0\n"
 "X-Domain: hivepress\n"
@@ -19,12 +19,13 @@ msgstr ""
 msgid "HivePress"
 msgstr ""
 
-#. Description of the plugin
-msgid "Multipurpose directory, listing & classifieds plugin."
-msgstr ""
-
+#. Plugin URI of the plugin
 #. Author URI of the plugin
 msgid "https://hivepress.io/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Multipurpose directory, listing & classifieds plugin."
 msgstr ""
 
 #: includes/blocks/class-listing-hide-toggle.php:31
@@ -48,229 +49,224 @@ msgstr ""
 msgid "User Registration Form"
 msgstr ""
 
-#: includes/components/class-admin.php:129
+#: includes/components/class-admin.php:132
 #: templates/admin/themes.php:6
 msgid "Themes"
 msgstr ""
 
-#: includes/components/class-admin.php:130
+#: includes/components/class-admin.php:133
 #: templates/admin/extensions.php:6
 msgid "Extensions"
 msgstr ""
 
-#: includes/components/class-admin.php:868
+#: includes/components/class-admin.php:884
 msgctxt "plural"
 msgid "All"
 msgstr ""
 
-#: includes/components/class-admin.php:873
+#: includes/components/class-admin.php:889
 msgctxt "plural"
 msgid "Installed"
 msgstr ""
 
-#: includes/components/class-admin.php:1463
+#: includes/components/class-admin.php:1495
 #: includes/configs/strings.php:16
 #: templates/admin/settings.php:6
 msgid "Settings"
 msgstr ""
 
 #. translators: %s: themes URL.
-#: includes/components/class-admin.php:1489
+#: includes/components/class-admin.php:1521
 msgid "The current theme doesn't declare HivePress support, if you notice any styling issues please consider using one of the <a href=\"%s\">official themes</a> instead."
 msgstr ""
 
 #. translators: %s: link URL.
-#: includes/components/class-admin.php:1501
+#: includes/components/class-admin.php:1533
 msgid "It's been more than 2 weeks since you installed HivePress, that's awesome! If you find it useful, please leave a review on <a href=\"%s\" target=\"_blank\">WordPress.org</a> to help us spread the word."
 msgstr ""
 
 #. translators: %s: link URL.
-#: includes/components/class-admin.php:1512
+#: includes/components/class-admin.php:1546
 msgid "Great start with HivePress! Check out our <a href=\"%1$s\">premium themes</a> and <a href=\"%2$s\">extensions</a> for more tailored design and functionality."
 msgstr ""
 
 #. translators: %s: terms URL.
-#: includes/components/class-admin.php:1525
+#: includes/components/class-admin.php:1559
 msgid "Help us make HivePress better by sharing <a href=\"%s\" target=\"_blank\">non-sensitive usage data</a> or dismiss this notice to opt out."
 msgstr ""
 
 #. translators: %s: terms URL.
-#: includes/components/class-admin.php:1525
+#: includes/components/class-admin.php:1559
 msgid "Share Usage Data"
 msgstr ""
 
 #. translators: %s: plugin name.
-#: includes/components/class-admin.php:1656
+#: includes/components/class-admin.php:1690
 msgid "Deactivate %s"
 msgstr ""
 
-#: includes/components/class-attribute.php:416
+#: includes/components/class-attribute.php:417
 msgid "Add Option"
 msgstr ""
 
-#: includes/components/class-attribute.php:417
+#: includes/components/class-attribute.php:418
 msgid "Edit Option"
 msgstr ""
 
-#: includes/components/class-attribute.php:418
+#: includes/components/class-attribute.php:419
 msgid "Update Option"
 msgstr ""
 
-#: includes/components/class-attribute.php:419
+#: includes/components/class-attribute.php:420
 msgid "Parent Option"
 msgstr ""
 
-#: includes/components/class-attribute.php:420
+#: includes/components/class-attribute.php:421
 msgid "Search Options"
 msgstr ""
 
-#: includes/components/class-attribute.php:421
+#: includes/components/class-attribute.php:422
 msgid "No options found."
 msgstr ""
 
-#: includes/components/class-attribute.php:561
+#: includes/components/class-attribute.php:562
 msgid "Edit Options"
 msgstr ""
 
-#: includes/components/class-attribute.php:611
+#: includes/components/class-attribute.php:612
 msgctxt "attribute"
 msgid "Searchable"
 msgstr ""
 
-#: includes/components/class-attribute.php:612
+#: includes/components/class-attribute.php:613
 msgid "Display in the search form"
 msgstr ""
 
-#: includes/components/class-attribute.php:618
+#: includes/components/class-attribute.php:619
 msgid "Pages"
 msgstr ""
 
-#: includes/components/class-attribute.php:619
+#: includes/components/class-attribute.php:620
 msgid "Create a page for each attribute option"
 msgstr ""
 
-#: includes/components/class-attribute.php:636
+#: includes/components/class-attribute.php:637
 msgid "Field Name"
 msgstr ""
 
-#: includes/components/class-attribute.php:637
+#: includes/components/class-attribute.php:638
 msgid "Set the field name used for storing the attribute values."
 msgstr ""
 
-#: includes/components/class-attribute.php:637
+#: includes/components/class-attribute.php:638
 msgid "Use lowercase letters, numbers, and underscores only."
 msgstr ""
 
-#: includes/components/class-attribute.php:829
+#: includes/components/class-attribute.php:830
 msgctxt "field"
 msgid "requires review"
 msgstr ""
 
-#: includes/components/class-attribute.php:1094
-#: includes/forms/class-listing-search.php:57
-msgid "All Categories"
-msgstr ""
-
-#: includes/components/class-attribute.php:1271
-#: includes/configs/strings.php:192
+#: includes/components/class-attribute.php:1287
+#: includes/configs/strings.php:193
 msgid "Attributes"
 msgstr ""
 
-#: includes/components/class-attribute.php:1280
+#: includes/components/class-attribute.php:1296
 msgctxt "attribute"
 msgid "Editable"
 msgstr ""
 
-#: includes/components/class-attribute.php:1281
+#: includes/components/class-attribute.php:1297
 msgid "Allow front-end editing"
 msgstr ""
 
-#: includes/components/class-attribute.php:1287
-#: includes/components/class-attribute.php:1323
+#: includes/components/class-attribute.php:1303
+#: includes/components/class-attribute.php:1339
 msgid "Field Type"
 msgstr ""
 
-#: includes/components/class-attribute.php:1302
+#: includes/components/class-attribute.php:1318
 msgctxt "attribute"
 msgid "Filterable"
 msgstr ""
 
-#: includes/components/class-attribute.php:1303
+#: includes/components/class-attribute.php:1319
 msgid "Display in the filter form"
 msgstr ""
 
-#: includes/components/class-attribute.php:1309
+#: includes/components/class-attribute.php:1325
 msgctxt "attribute"
 msgid "Indexable"
 msgstr ""
 
-#: includes/components/class-attribute.php:1310
+#: includes/components/class-attribute.php:1326
 msgid "Include in keyword search"
 msgstr ""
 
-#: includes/components/class-attribute.php:1316
+#: includes/components/class-attribute.php:1332
 msgctxt "attribute"
 msgid "Sortable"
 msgstr ""
 
-#: includes/components/class-attribute.php:1317
+#: includes/components/class-attribute.php:1333
 msgid "Display as a sorting option"
 msgstr ""
 
-#: includes/components/class-attribute.php:1337
+#: includes/components/class-attribute.php:1353
 msgid "Areas"
 msgstr ""
 
-#: includes/components/class-attribute.php:1338
+#: includes/components/class-attribute.php:1354
 msgid "Choose the template areas where you want to display this attribute."
 msgstr ""
 
-#: includes/components/class-attribute.php:1344
-#: includes/components/class-attribute.php:1345
+#: includes/components/class-attribute.php:1360
+#: includes/components/class-attribute.php:1361
 msgid "Block"
 msgstr ""
 
-#: includes/components/class-attribute.php:1344
-#: includes/components/class-attribute.php:1346
+#: includes/components/class-attribute.php:1360
+#: includes/components/class-attribute.php:1362
 msgctxt "area"
 msgid "primary"
 msgstr ""
 
-#: includes/components/class-attribute.php:1345
-#: includes/components/class-attribute.php:1347
+#: includes/components/class-attribute.php:1361
+#: includes/components/class-attribute.php:1363
 msgctxt "area"
 msgid "secondary"
 msgstr ""
 
-#: includes/components/class-attribute.php:1346
-#: includes/components/class-attribute.php:1347
+#: includes/components/class-attribute.php:1362
+#: includes/components/class-attribute.php:1363
 msgid "Page"
 msgstr ""
 
-#: includes/components/class-attribute.php:1352
+#: includes/components/class-attribute.php:1368
 msgid "Icon"
 msgstr ""
 
-#: includes/components/class-attribute.php:1360
+#: includes/components/class-attribute.php:1376
 msgid "Format"
 msgstr ""
 
-#: includes/components/class-attribute.php:1361
+#: includes/components/class-attribute.php:1377
 msgid "Set the attribute display format."
 msgstr ""
 
-#: includes/components/class-attribute.php:1377
+#: includes/components/class-attribute.php:1393
 #: includes/configs/meta-boxes.php:132
 msgctxt "sort priority"
 msgid "Order"
 msgstr ""
 
-#: includes/components/class-attribute.php:1413
+#: includes/components/class-attribute.php:1429
 msgctxt "attribute"
 msgid "Moderated"
 msgstr ""
 
-#: includes/components/class-attribute.php:1414
+#: includes/components/class-attribute.php:1430
 msgid "Manually approve changes"
 msgstr ""
 
@@ -326,8 +322,8 @@ msgid "Please check your email to activate your account."
 msgstr ""
 
 #: includes/components/class-user.php:195
-#: includes/configs/settings.php:278
-#: includes/configs/settings.php:313
+#: includes/configs/settings.php:279
+#: includes/configs/settings.php:314
 #: includes/models/class-user.php:48
 msgid "Username"
 msgstr ""
@@ -414,7 +410,7 @@ msgid "Emails"
 msgstr ""
 
 #: includes/configs/post-types.php:22
-#: includes/configs/settings.php:322
+#: includes/configs/settings.php:323
 #: includes/fields/class-email.php:28
 #: includes/models/class-user.php:56
 msgid "Email"
@@ -509,7 +505,7 @@ msgid "Expiration"
 msgstr ""
 
 #: includes/configs/settings.php:210
-#: includes/configs/settings.php:271
+#: includes/configs/settings.php:272
 msgctxt "noun"
 msgid "Display Name"
 msgstr ""
@@ -518,109 +514,109 @@ msgstr ""
 msgid "User Name"
 msgstr ""
 
-#: includes/configs/settings.php:245
-#: includes/configs/settings.php:250
-#: includes/configs/settings.php:290
-#: includes/configs/settings.php:305
+#: includes/configs/settings.php:246
+#: includes/configs/settings.php:251
+#: includes/configs/settings.php:291
+#: includes/configs/settings.php:306
 msgid "Registration"
 msgstr ""
 
-#: includes/configs/settings.php:251
+#: includes/configs/settings.php:252
 msgid "Allow direct registration"
 msgstr ""
 
-#: includes/configs/settings.php:261
+#: includes/configs/settings.php:262
 msgid "Users"
 msgstr ""
 
-#: includes/configs/settings.php:279
+#: includes/configs/settings.php:280
 #: includes/models/class-user.php:77
 msgid "First Name"
 msgstr ""
 
-#: includes/configs/settings.php:280
+#: includes/configs/settings.php:281
 msgid "First Name and First Letter of Last Name"
 msgstr ""
 
-#: includes/configs/settings.php:281
+#: includes/configs/settings.php:282
 #: includes/models/class-user.php:92
 msgid "Last Name"
 msgstr ""
 
-#: includes/configs/settings.php:282
+#: includes/configs/settings.php:283
 msgid "First Letter of First Name and Last Name"
 msgstr ""
 
-#: includes/configs/settings.php:283
+#: includes/configs/settings.php:284
 msgid "Full Name"
 msgstr ""
 
-#: includes/configs/settings.php:295
+#: includes/configs/settings.php:296
 msgid "Registration Terms Page"
 msgstr ""
 
-#: includes/configs/settings.php:296
+#: includes/configs/settings.php:297
 msgid "Choose a page with terms that user has to accept before registering."
 msgstr ""
 
-#: includes/configs/settings.php:306
+#: includes/configs/settings.php:307
 msgid "Allow user registration"
 msgstr ""
 
-#: includes/configs/settings.php:314
+#: includes/configs/settings.php:315
 msgid "Generate username from the email address"
 msgstr ""
 
-#: includes/configs/settings.php:323
+#: includes/configs/settings.php:324
 msgid "Require email address verification"
 msgstr ""
 
-#: includes/configs/settings.php:330
+#: includes/configs/settings.php:331
 msgid "Security"
 msgstr ""
 
-#: includes/configs/settings.php:331
+#: includes/configs/settings.php:332
 msgid "Check this option to block the WordPress back-end access for regular users."
 msgstr ""
 
-#: includes/configs/settings.php:332
+#: includes/configs/settings.php:333
 msgid "Restrict access to the WordPress back-end"
 msgstr ""
 
-#: includes/configs/settings.php:344
+#: includes/configs/settings.php:345
 msgid "Integrations"
 msgstr ""
 
-#: includes/configs/settings.php:354
+#: includes/configs/settings.php:355
 msgid "Protected Forms"
 msgstr ""
 
-#: includes/configs/settings.php:362
+#: includes/configs/settings.php:363
 msgid "Site Key"
 msgstr ""
 
-#: includes/configs/settings.php:386
+#: includes/configs/settings.php:387
 msgid "HivePress Store"
 msgstr ""
 
-#: includes/configs/settings.php:391
+#: includes/configs/settings.php:392
 msgid "Usage Tracking"
 msgstr ""
 
-#: includes/configs/settings.php:392
+#: includes/configs/settings.php:393
 msgid "Allow usage tracking"
 msgstr ""
 
 #. translators: %s: terms URL.
-#: includes/configs/settings.php:394
+#: includes/configs/settings.php:395
 msgid "Check this option to allow tracking <a href=\"%s\" target=\"_blank\">non-sensitive usage data</a> and help us make HivePress better."
 msgstr ""
 
-#: includes/configs/settings.php:400
+#: includes/configs/settings.php:401
 msgid "License Keys"
 msgstr ""
 
-#: includes/configs/settings.php:401
+#: includes/configs/settings.php:402
 msgid "Please enter the license keys for purchased themes and extensions, each key on a new line."
 msgstr ""
 
@@ -1234,77 +1230,81 @@ msgid "Categories"
 msgstr ""
 
 #: includes/configs/strings.php:182
-msgid "Parent Category"
+msgid "All Categories"
 msgstr ""
 
 #: includes/configs/strings.php:183
-msgid "Add Category"
+msgid "Parent Category"
 msgstr ""
 
 #: includes/configs/strings.php:184
-msgid "Edit Category"
+msgid "Add Category"
 msgstr ""
 
 #: includes/configs/strings.php:185
-msgid "Update Category"
+msgid "Edit Category"
 msgstr ""
 
 #: includes/configs/strings.php:186
-msgid "View Category"
+msgid "Update Category"
 msgstr ""
 
 #: includes/configs/strings.php:187
-msgid "Search Categories"
+msgid "View Category"
 msgstr ""
 
 #: includes/configs/strings.php:188
-msgid "No categories found."
+msgid "Search Categories"
 msgstr ""
 
 #: includes/configs/strings.php:189
+msgid "No categories found."
+msgstr ""
+
+#: includes/configs/strings.php:190
 msgctxt "imperative"
 msgid "Select Category"
 msgstr ""
 
-#: includes/configs/strings.php:193
+#: includes/configs/strings.php:194
 msgid "Attribute"
 msgstr ""
 
-#: includes/configs/strings.php:194
+#: includes/configs/strings.php:195
 msgctxt "attribute"
 msgid "Add New"
 msgstr ""
 
-#: includes/configs/strings.php:195
+#: includes/configs/strings.php:196
 msgid "Add Attribute"
 msgstr ""
 
-#: includes/configs/strings.php:196
+#: includes/configs/strings.php:197
 msgid "Edit Attribute"
 msgstr ""
 
-#: includes/configs/strings.php:197
+#: includes/configs/strings.php:198
 msgid "Search Attributes"
 msgstr ""
 
-#: includes/configs/strings.php:198
+#: includes/configs/strings.php:199
 msgid "No attributes found."
 msgstr ""
 
-#: includes/configs/strings.php:201
+#: includes/configs/strings.php:202
 #: includes/fields/class-attachment-upload.php:64
 msgid "Attachment"
 msgstr ""
 
-#: includes/configs/strings.php:202
+#: includes/configs/strings.php:203
 msgid "Attachments"
 msgstr ""
 
-#: includes/configs/strings.php:203
+#: includes/configs/strings.php:204
 msgid "Allow file attachments"
 msgstr ""
 
-#: includes/configs/strings.php:204
+#: includes/configs/strings.php:205
 msgid "Allowed File Types"
 msgstr ""
 
@@ -1666,16 +1666,24 @@ msgstr ""
 msgid "\"%1$s\" can't be greater than %2$s."
 msgstr ""
 
-#: includes/fields/class-phone.php:35
+#: includes/fields/class-phone.php:42
 msgid "Phone"
 msgstr ""
 
-#: includes/fields/class-phone.php:45
+#: includes/fields/class-phone.php:52
 msgid "Countries"
 msgstr ""
 
-#: includes/fields/class-phone.php:46
+#: includes/fields/class-phone.php:53
 msgid "Select countries to restrict the available calling codes."
+msgstr ""
+
+#: includes/fields/class-phone.php:61
+msgid "Default Country"
+msgstr ""
+
+#: includes/fields/class-phone.php:62
+msgid "Select the country calling code displayed by default."
 msgstr ""
 
 #: includes/fields/class-radio.php:28

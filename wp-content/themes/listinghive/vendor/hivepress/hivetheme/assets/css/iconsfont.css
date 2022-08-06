@@ -28,6 +28,7 @@
 .icon-UserCircle:before {
   content: "\e906";
   color: #fff;
+  font-size: 30px;
 }
 .icon-ChatTeardropText:before {
   content: "\e907";

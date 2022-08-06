@@ -47,7 +47,7 @@ abstract class Page_Sidebar_Left extends Page {
 										'_order'     => 10,
 
 										'attributes' => [
-											'class' => [ 'hp-page__sidebar', 'hp-col-sm-4', 'hp-col-xs-12' ],
+											'class' => [ 'hp-page__sidebar', 'hp-col-sm-3', 'hp-col-xs-12' ],
 										],
 									],
 
@@ -56,7 +56,7 @@ abstract class Page_Sidebar_Left extends Page {
 										'_order'     => 20,
 
 										'attributes' => [
-											'class' => [ 'hp-page__content', 'hp-col-sm-8', 'hp-col-xs-12' ],
+											'class' => [ 'hp-page__content', 'hp-col-sm-9', 'hp-col-xs-12' ],
 										],
 
 										'blocks'     => [
