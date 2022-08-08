@@ -28,13 +28,18 @@
 								?>
 								<a href="<?php echo esc_url( home_url() ); ?>" rel="home">
 									<div class="header-logo__name"><?php bloginfo( 'name' ); ?></div>
-									<!-- <?php if ( get_bloginfo( 'description' ) ) : ?>
+									<?php if ( get_bloginfo( 'description' ) ) : ?>
 										<div class="header-logo__description"><?php bloginfo( 'description' ); ?></div>
-									<?php endif; ?> -->
+									<?php endif; ?>
 								</a>
 							<?php endif; ?>
 						</div>
 					</div>
+
+
+
+
+					
 					<div class="header-navbar__end">
 						<div class="header-navbar__burger" data-component="burger">
 							<a href="#"><i class="fas fa-bars"></i></a>

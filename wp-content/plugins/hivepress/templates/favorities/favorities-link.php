@@ -1,0 +1,1 @@
+<a class="favorties-link icon-Heart" style="margin: 0 17px 0 17px;" href="http://silk/account/favorites/"></a>

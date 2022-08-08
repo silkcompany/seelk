@@ -36,17 +36,30 @@ class Site_Header_Block extends Template {
 						],
 
 						'blocks'     => [
-							'user_account_link'   => [
-								'type'   => 'part',
-								'path'   => 'user/login/user-login-link',
-								'_order' => 10,
-							],
-
 							'listing_submit_link' => [
 								'type'   => 'part',
 								'path'   => 'listing/submit/listing-submit-link',
+								'_order' => 10,
+							],
+
+							'messages_link' => [
+								'type'   => 'part',
+								'path'   => 'messages/messages-link',
 								'_order' => 20,
 							],
+
+							'favorities_link' => [
+								'type'   => 'part',
+								'path'   => 'favorities/favorities-link',
+								'_order' => 30,
+							],
+
+							'user_account_link'   => [
+								'type'   => 'part',
+								'path'   => 'user/login/user-login-link',
+								'_order' => 40,
+							],
+
 						],
 					],
 				],

@@ -1,6 +1,6 @@
 <?php
 
-<?php
+
 add_filter(
 	'hivepress/v1/templates/vendor_view_page',
 	function( $template ) {
