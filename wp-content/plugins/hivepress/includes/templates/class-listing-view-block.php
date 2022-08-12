@@ -158,6 +158,7 @@ class Listing_View_Block extends Template {
 										'model'  => 'listing',
 										'area'   => 'view_block_primary',
 										'_order' => 10,
+										
 									],
 
 									'listing_actions_primary'    => [
@@ -166,7 +167,7 @@ class Listing_View_Block extends Template {
 										'_order'     => 20,
 
 										'attributes' => [
-											'class' => [ 'hp-listing__actions', 'hp-listing__actions--primary' ],
+											'class' => [ 'hp-listing__actions', 'hp-listing__actions--primary'],
 										],
 									],
 								],

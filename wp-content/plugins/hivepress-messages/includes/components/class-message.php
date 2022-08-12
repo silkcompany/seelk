@@ -62,6 +62,8 @@ final class Message extends Component {
 			add_filter( 'hivepress/v1/menus/user_account', [ $this, 'alter_account_menu' ] );
 
 			// Alter templates.
+			add_filter( 'hivepress/v1/templates/messages_view_page/blocks', [ $this, 'alter_messages_view_blocks' ], 10, 2 );
+
 			add_filter( 'hivepress/v1/templates/message_view_block/blocks', [ $this, 'alter_message_view_blocks' ], 10, 2 );
 			add_filter( 'hivepress/v1/templates/message_thread_block/blocks', [ $this, 'alter_message_view_blocks' ], 10, 2 );
 
@@ -256,6 +258,18 @@ final class Message extends Component {
 				]
 			)->delete();
 		}
+
+		// Delete message cache.
+		if ( get_option( 'hp_message_allow_monitoring' ) ) {
+			foreach ( get_users(
+				[
+					'role'   => 'administrator',
+					'fields' => 'ids',
+				]
+			) as $user_id ) {
+				hivepress()->cache->delete_user_cache( $user_id, null, 'models/message' );
+			}
+		}
 	}
 
 	/**
@@ -308,17 +322,31 @@ final class Message extends Component {
 
 		if ( is_null( $thread_ids ) ) {
 
+			// Get thread query.
+			$thread_query = null;
+
+			if ( get_option( 'hp_message_allow_monitoring' ) && current_user_can( 'manage_options' ) ) {
+				$thread_query = $wpdb->prepare(
+					"SELECT MAX(comment_ID) AS comment_ID FROM {$wpdb->comments}
+					WHERE comment_type = %s AND comment_karma != 0
+					GROUP BY user_id, comment_karma;",
+					'hp_message'
+				);
+			} else {
+				$thread_query = $wpdb->prepare(
+					"SELECT MAX(comment_ID) AS comment_ID FROM {$wpdb->comments}
+					WHERE comment_type = %s AND ( user_id = %d OR comment_karma = %d ) AND comment_karma != 0
+					GROUP BY user_id, comment_karma;",
+					'hp_message',
+					get_current_user_id(),
+					get_current_user_id()
+				);
+			}
+
 			// Get thread IDs.
 			$thread_ids = array_column(
 				$wpdb->get_results(
-					$wpdb->prepare(
-						"SELECT MAX(comment_ID) AS comment_ID FROM {$wpdb->comments}
-						WHERE comment_type = %s AND ( user_id = %d OR comment_karma = %d ) AND comment_karma != 0
-						GROUP BY user_id, comment_karma;",
-						'hp_message',
-						get_current_user_id(),
-						get_current_user_id()
-					),
+					$thread_query,
 					ARRAY_A
 				),
 				'comment_ID'
@@ -393,6 +421,34 @@ final class Message extends Component {
 	}
 
 	/**
+	 * Alters messages view blocks.
+	 *
+	 * @param array  $blocks Block arguments.
+	 * @param object $template Template object.
+	 * @return array
+	 */
+	public function alter_messages_view_blocks( $blocks, $template ) {
+
+		// Get recipient.
+		$recipient = $template->get_context( 'recipient' );
+
+		if ( $recipient && get_current_user_id() !== $recipient->get_id() ) {
+			$blocks = hp\merge_trees(
+				[ 'blocks' => $blocks ],
+				[
+					'blocks' => [
+						'message_send_form' => [
+							'type' => 'content',
+						],
+					],
+				]
+			)['blocks'];
+		}
+
+		return $blocks;
+	}
+
+	/**
 	 * Alters message view blocks.
 	 *
 	 * @param array  $blocks Block arguments.
@@ -401,15 +457,16 @@ final class Message extends Component {
 	 */
 	public function alter_message_view_blocks( $blocks, $template ) {
 
-		// Get message.
-		$message = $template->get_context( 'message' );
+		// Get message and recipient.
+		$message   = $template->get_context( 'message' );
+		$recipient = $template->get_context( 'recipient' );
 
 		if ( $message ) {
 
 			// Get classes.
 			$classes = [];
 
-			if ( $message->get_sender__id() === get_current_user_id() ) {
+			if ( $recipient && $message->get_sender__id() === $recipient->get_id() ) {
 				$classes[] = 'hp-message--sent';
 			}
 
@@ -450,19 +507,16 @@ final class Message extends Component {
 					'listing_actions_primary' => [
 						'blocks' => [
 							'message_send_modal' => [
-								'type'   => 'modal',
-								'model'  => 'listing',
-								'title'  => hivepress()->translator->get_string( 'reply_to_listing' ),
-								'_order' => 5,
+								'type'        => 'modal',
+								'model'       => 'listing',
+								'title'       => hivepress()->translator->get_string( 'reply_to_listing' ),
+								'_capability' => 'read',
+								'_order'      => 5,
 
-								'blocks' => [
+								'blocks'      => [
 									'message_send_form' => [
-										'type'       => 'message_send_form',
-										'_order'     => 10,
-
-										'attributes' => [
-											'class' => [ 'hp-form--narrow' ],
-										],
+										'type'   => 'message_send_form',
+										'_order' => 10,
 									],
 								],
 							],
@@ -493,19 +547,16 @@ final class Message extends Component {
 					'listing_actions_primary' => [
 						'blocks' => [
 							'message_send_modal' => [
-								'type'   => 'modal',
-								'model'  => 'listing',
-								'title'  => hivepress()->translator->get_string( 'reply_to_listing' ),
-								'_order' => 5,
+								'type'        => 'modal',
+								'model'       => 'listing',
+								'title'       => hivepress()->translator->get_string( 'reply_to_listing' ),
+								'_capability' => 'read',
+								'_order'      => 5,
 
-								'blocks' => [
+								'blocks'      => [
 									'message_send_form' => [
-										'type'       => 'message_send_form',
-										'_order'     => 10,
-
-										'attributes' => [
-											'class' => [ 'hp-form--narrow' ],
-										],
+										'type'   => 'message_send_form',
+										'_order' => 10,
 									],
 								],
 							],
@@ -536,19 +587,16 @@ final class Message extends Component {
 					'vendor_actions_primary' => [
 						'blocks' => [
 							'message_send_modal' => [
-								'type'   => 'modal',
-								'model'  => 'vendor',
-								'title'  => hivepress()->translator->get_string( 'send_message' ),
-								'_order' => 5,
+								'type'        => 'modal',
+								'model'       => 'vendor',
+								'title'       => hivepress()->translator->get_string( 'send_message' ),
+								'_capability' => 'read',
+								'_order'      => 5,
 
-								'blocks' => [
+								'blocks'      => [
 									'message_send_form' => [
-										'type'       => 'message_send_form',
-										'_order'     => 10,
-
-										'attributes' => [
-											'class' => [ 'hp-form--narrow' ],
-										],
+										'type'   => 'message_send_form',
+										'_order' => 10,
 									],
 								],
 							],
@@ -579,19 +627,16 @@ final class Message extends Component {
 					'vendor_actions_primary' => [
 						'blocks' => [
 							'message_send_modal' => [
-								'type'   => 'modal',
-								'model'  => 'vendor',
-								'title'  => hivepress()->translator->get_string( 'send_message' ),
-								'_order' => 5,
+								'type'        => 'modal',
+								'model'       => 'vendor',
+								'title'       => hivepress()->translator->get_string( 'send_message' ),
+								'_capability' => 'read',
+								'_order'      => 5,
 
-								'blocks' => [
+								'blocks'      => [
 									'message_send_form' => [
-										'type'       => 'message_send_form',
-										'_order'     => 10,
-
-										'attributes' => [
-											'class' => [ 'hp-form--narrow' ],
-										],
+										'type'   => 'message_send_form',
+										'_order' => 10,
 									],
 								],
 							],
@@ -622,18 +667,15 @@ final class Message extends Component {
 					'order_actions_primary' => [
 						'blocks' => [
 							'message_send_modal' => [
-								'type'   => 'modal',
-								'title'  => hivepress()->translator->get_string( 'send_message' ),
-								'_order' => 5,
+								'type'        => 'modal',
+								'title'       => hivepress()->translator->get_string( 'send_message' ),
+								'_capability' => 'read',
+								'_order'      => 5,
 
-								'blocks' => [
+								'blocks'      => [
 									'message_send_form' => [
-										'type'       => 'message_send_form',
-										'_order'     => 10,
-
-										'attributes' => [
-											'class' => [ 'hp-form--narrow' ],
-										],
+										'type'   => 'message_send_form',
+										'_order' => 10,
 									],
 								],
 							],
@@ -664,19 +706,16 @@ final class Message extends Component {
 					'booking_actions_primary' => [
 						'blocks' => [
 							'message_send_modal' => [
-								'type'   => 'modal',
-								'model'  => 'booking',
-								'title'  => hivepress()->translator->get_string( 'send_message' ),
-								'_order' => 5,
+								'type'        => 'modal',
+								'model'       => 'booking',
+								'title'       => hivepress()->translator->get_string( 'send_message' ),
+								'_capability' => 'read',
+								'_order'      => 5,
 
-								'blocks' => [
+								'blocks'      => [
 									'message_send_form' => [
-										'type'       => 'message_send_form',
-										'_order'     => 10,
-
-										'attributes' => [
-											'class' => [ 'hp-form--narrow' ],
-										],
+										'type'   => 'message_send_form',
+										'_order' => 10,
 									],
 								],
 							],
@@ -707,19 +746,16 @@ final class Message extends Component {
 					'booking_actions_primary' => [
 						'blocks' => [
 							'message_send_modal' => [
-								'type'   => 'modal',
-								'model'  => 'booking',
-								'title'  => hivepress()->translator->get_string( 'send_message' ),
-								'_order' => 5,
+								'type'        => 'modal',
+								'model'       => 'booking',
+								'title'       => hivepress()->translator->get_string( 'send_message' ),
+								'_capability' => 'read',
+								'_order'      => 5,
 
-								'blocks' => [
+								'blocks'      => [
 									'message_send_form' => [
-										'type'       => 'message_send_form',
-										'_order'     => 10,
-
-										'attributes' => [
-											'class' => [ 'hp-form--narrow' ],
-										],
+										'type'   => 'message_send_form',
+										'_order' => 10,
 									],
 								],
 							],

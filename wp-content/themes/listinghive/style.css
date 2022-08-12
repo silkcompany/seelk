@@ -761,10 +761,6 @@ HivePress
   padding: 1rem 1.5rem;
   border-top: 1px solid rgba(7, 36, 86, 0.075);
 }
-.hp-listing--view-block .hp-listing__image img {
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-}
 .hp-listing__images-slider {
   border-radius: 3px;
 }

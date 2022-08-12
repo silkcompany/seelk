@@ -1,6 +1,4 @@
 <?php
-
-
 add_filter(
 	'hivepress/v1/templates/vendor_view_page',
 	function( $template ) {
@@ -17,6 +15,10 @@ add_filter(
 	}
 );
 
-
-
-?>
+// Enqueue theme styles.
+add_action(
+    'wp_enqueue_scripts',
+    function(){
+         wp_enqueue_style('listinghive-child',get_stylesheet_directory_uri() . '/style.css');
+);
+// Add custom code below.
