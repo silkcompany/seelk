@@ -140,7 +140,7 @@ class Listing_View_Block extends Template {
 										'columns' => 2,
 										'_order'  => 30,
 									],
-								],
+								],  
 							],
 
 							'listing_footer'  => [

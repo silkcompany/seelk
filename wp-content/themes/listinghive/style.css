@@ -109,7 +109,7 @@ Header
 --------------------------------------------------------------*/
 .site-header{
   background-color: #252525;
-  height: 70px;
+  margin-bottom: 8px;
 }
 .header-logo__name{
   color: #fff;

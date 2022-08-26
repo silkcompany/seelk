@@ -83,6 +83,20 @@ class Listing_View_Page extends Page_Sidebar_Right {
 								'attributes' => [
 									'class' => [ 'hp-listing__actions', 'hp-listing__actions--secondary' ],
 								],
+
+								'blocks'     => [
+									'review_submit_link' => [
+										'type'   => 'part',
+										'path'   => 'listing/view/page/review-submit-link',
+										'_order' => 10,
+									],
+
+									'listing_report_link' => [
+										'type'   => 'part',
+										'path'   => 'listing/view/page/listing-report-link',
+										'_order' => 20,
+									],
+								],
 							],
 						],
 					],
@@ -148,6 +162,12 @@ class Listing_View_Page extends Page_Sidebar_Right {
 								'_order' => 40,
 							],
 
+							'listing_attributes_title'               => [
+								'type'   => 'part',
+								'path'   => 'listing/view/page/listing-attributes-title',
+								'_order' => 45,
+							],
+
 							'listing_attributes_secondary' => [
 								'type'      => 'attributes',
 								'model'     => 'listing',
@@ -206,11 +226,7 @@ class Listing_View_Page extends Page_Sidebar_Right {
 										],
 									],
 
-									'listing_report_link'  => [
-										'type'   => 'part',
-										'path'   => 'listing/view/page/listing-report-link',
-										'_order' => 1000,
-									],
+									
 								],
 							],
 

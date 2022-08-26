@@ -15,4 +15,6 @@ if ( $listing->get_images__url( 'hp_landscape_large' ) ) :
 		<?php endforeach; ?>
 	</div>
 	<?php
-endif;
+endif;  
+  
+ 

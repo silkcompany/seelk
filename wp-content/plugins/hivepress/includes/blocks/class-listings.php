@@ -328,7 +328,7 @@ class Listings extends Block {
 
 					if ( $listing ) {
 						if ( 'edit' !== $this->mode ) {
-							$output .= '<div class="hp-grid__item hp-col-sm-4 hp-col-xs-12">';
+							$output .= '<div class="hp-grid__item hp-col-sm-6 hp-col-lg-4 hp-col-xs-12">';
 						}
 
 						// Render listing.
