@@ -18,6 +18,7 @@
 							</div>
 						</div>
 					<?php endif; ?>
+					
 					<div class="footer-navbar__end">
 						<nav class="footer-navbar__menu">
 							<?php
@@ -29,6 +30,21 @@
 							);
 							?>
 						</nav>
+					</div>
+					<div class="cmn">
+						<div class="cmn-block-1">
+							<span>Поддержка:</span>
+							<div class="cmn-mail" type="email">silk.help24@gmail.com</div>
+						</div>
+						<div class="cmn-block-2">
+							<span>Мы в соц.сецях:</span>
+								<div class="cmn__inst">
+									<a href="https://www.instagram.com/seelk.by/" class="cmn__inst-link">
+										<img src="<?php echo bloginfo('template_url'); ?>/assets/img/inst-icon.png" alt="instagram icon">
+									</a>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
