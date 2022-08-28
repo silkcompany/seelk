@@ -47,7 +47,7 @@ abstract class Page_Sidebar_Left extends Page {
 										'_order'     => 10,
 
 										'attributes' => [
-											'class' => [ 'hp-page__sidebar', 'hp-col-sm-3', 'hp-col-xs-12' ],
+											'class' => [ 'hp-page__sidebar', 'hp-col-md-3', 'hp-col-sm-12',],
 										],
 									],
 
