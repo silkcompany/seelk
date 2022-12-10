@@ -3,10 +3,14 @@
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Seelk.by - это новая доска объявления для всеми любимой яблочной техники с аккуратным дизайном и всеми необходимыми функциями.">
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo bloginfo('template_url');?>/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="<?php echo bloginfo('template_url');?>/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="<?php echo bloginfo('template_url');?>/favicon/favicon-16x16.png">
+        <link rel="manifest" href="<?php echo bloginfo('template_url');?>/favicon/site.webmanifest">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-		<!-- <link rel="stylesheet" href="<?php echo bloginfo('template_url');?>/vendor/hivepress/hivetheme/assets/css/iconsfont.css"> -->
 		<?php wp_head(); ?>
 	</head>
 	<?php $column_width = 4; ?>

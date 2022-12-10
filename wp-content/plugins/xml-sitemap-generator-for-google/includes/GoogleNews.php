@@ -1,0 +1,168 @@
+<?php
+
+namespace GRIM_SG;
+
+use GRIM_SG\Vendor\SitemapGenerator;
+
+class GoogleNews extends Sitemap {
+	private $blog_language = null;
+
+	/**
+	 * Generate Sitemap
+	 */
+	public function generate_sitemap() {
+		$sitemap        = new SitemapGenerator( get_home_url() );
+		$this->settings = $this->get_settings();
+
+		$this->collect_urls();
+		$sitemap->addUrls( $this->urls, true );
+
+		try {
+			$sitemap->createSitemap( true );
+		} catch ( \Exception $exc ) {
+			echo $exc->getTraceAsString();
+		}
+
+		return $sitemap;
+	}
+
+	/**
+	 * Collect Sitemap URLs
+	 */
+	public function collect_urls() {
+		$this->add_posts();
+
+		if ( sgg_pro_enabled() ) {
+			$this->add_categories();
+		}
+	}
+
+	/**
+	 * Add all Posts to Sitemap
+	 */
+	public function add_posts() {
+		$post_types        = array( 'post' );
+		$exclude_posts     = json_decode( stripslashes( $this->settings->google_news_exclude ?? '' ) );
+
+		if ( sgg_pro_enabled() ) {
+			foreach ( $this->get_cpt() as $cpt ) {
+				if ( ! empty( $this->settings->{$cpt} ) && ! empty( $this->settings->{$cpt}->google_news ) ) {
+					$post_types[] = $cpt;
+				}
+			}
+		}
+
+		$args = array(
+			'post_type'      => $post_types,
+			'post_status'    => array( 'publish' ),
+			'has_password'   => false,
+			'orderby'        => 'post_modified',
+			'order'          => 'DESC',
+			'posts_per_page' => -1,
+		);
+
+		$posts = new \WP_Query( $args );
+
+		foreach ( $posts->posts as $post ) {
+			if ( apply_filters( 'ssg_exclude_google_news_post', true, $post->ID, $exclude_posts ) ) {
+				$this->add_url(
+					get_permalink( $post ),
+					$post->ID,
+					$post->post_title,
+					get_date_from_gmt( $post->post_date_gmt, DATE_W3C ),
+					$post->post_type
+				);
+			}
+		}
+	}
+
+	/**
+	 * Add all Categories & Tags
+	 */
+	public function add_categories() {
+		$taxonomy_types = array();
+
+		foreach ( $this->get_taxonomy_types() as $taxonomy_type ) {
+			if ( ! empty( $this->settings->{$taxonomy_type} ) ) {
+				if ( $this->settings->{$taxonomy_type}->google_news ) {
+					$taxonomy_types[] = $taxonomy_type;
+				}
+			} else {
+				if ( $this->settings->category->google_news ) {
+					$taxonomy_types[] = $taxonomy_type;
+				}
+			}
+		}
+
+		if ( ! empty( $taxonomy_types ) ) {
+			$args = array(
+				'taxonomy'   => $taxonomy_types,
+				'hide_empty' => false,
+				'number'     => false,
+				'fields'     => 'all',
+			);
+
+			$terms = get_terms( $args );
+
+			foreach ( $terms as $term ) {
+				$args = array(
+					'post_type'      => 'any',
+					'posts_per_page' => 1,
+					'orderby'        => 'date',
+					'order'          => 'DESC',
+					'tax_query'      => array(
+						array(
+							'taxonomy' => $term->taxonomy,
+							'field'    => 'id',
+							'terms'    => array( $term->term_id ),
+						),
+					),
+				);
+
+				$latest_posts = new \WP_Query( $args );
+				$latest_post  = $latest_posts->posts;
+
+				if ( ! empty( $latest_post[0] ) ) {
+					$this->add_url(
+						get_category_link( $term ),
+						$term->term_id,
+						$term->name,
+						get_post_modified_time( 'c', false, $latest_post[0] )
+					);
+				}
+			}
+		}
+	}
+
+	/**
+	 * Add Google News Sitemap Url
+	 *
+	 * @param string $url
+	 * @param int $id
+	 * @param string $title
+	 * @param string $last_modified
+	 * @param string $post_type
+	 */
+	public function add_url( $url, $id, $title, $last_modified = '', $post_type = 'post' ) {
+		$new_url = array(
+			$url, // URL
+			! empty( $settings->google_news_name ) ? $settings->google_news_name : get_bloginfo( 'name' ), // Publication Name
+			apply_filters( 'ssg_news_language', $this->get_blog_language(), $id, $post_type ), // Publication Language
+			$title, // Title
+			$last_modified, // Last Modified
+		);
+
+		$this->urls[] = $new_url;
+	}
+
+	/**
+	 * Get Blog Language
+	 */
+	public function get_blog_language() {
+		if ( $this->blog_language === null ) {
+			$this->blog_language = ssg_parse_language( get_bloginfo( 'language' ) );
+		}
+
+		return $this->blog_language;
+	}
+}

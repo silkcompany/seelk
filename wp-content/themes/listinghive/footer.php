@@ -34,7 +34,7 @@
 					<div class="cmn">
 						<div class="cmn-block-1">
 							<span>Поддержка:</span>
-							<div class="cmn-mail" type="email">silk.help24@gmail.com</div>
+							<div class="cmn-mail" type="email">help.seelk@gmail.com</div>
 						</div>
 						<div class="cmn-block-2">
 							<span>Мы в соц.сецях:</span>

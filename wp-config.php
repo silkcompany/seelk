@@ -1,4 +1,6 @@
 <?php
+define( 'WP_CACHE', true );
+
 /**
  * Основные параметры WordPress.
  *
@@ -20,13 +22,13 @@
 
 // ** Параметры базы данных: Эту информацию можно получить у вашего хостинг-провайдера ** //
 /** Имя базы данных для WordPress */
-define( 'DB_NAME', 'silk' );
+define( 'DB_NAME', 'seelkby_base' );
 
 /** Имя пользователя базы данных */
-define( 'DB_USER', 'silk_admin' );
+define( 'DB_USER', 'seelkby_admin' );
 
 /** Пароль к базе данных */
-define( 'DB_PASSWORD', 'vRGyJhNLLernY4Gs' );
+define( 'DB_PASSWORD', 'kipextrans18' );
 
 /** Имя сервера базы данных */
 define( 'DB_HOST', 'localhost' );

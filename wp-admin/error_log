@@ -1,0 +1,59 @@
+[09-Dec-2022 15:49:26 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function trailingslashit() in /home/seelkby/public_html/wp-includes/class-wp-textdomain-registry.php:103
+Stack trace:
+#0 /home/seelkby/public_html/wp-includes/l10n.php(784): WP_Textdomain_Registry->set('default', 'ru_RU', '/home/seelkby/p...')
+#1 /home/seelkby/public_html/wp-includes/load.php(1401): load_textdomain('default', '/home/seelkby/p...', 'ru_RU')
+#2 /home/seelkby/public_html/wp-includes/load.php(278): wp_load_translations_early()
+#3 /home/seelkby/public_html/wp-settings.php(74): wp_maintenance()
+#4 /home/seelkby/public_html/wp-config.php(97): require_once('/home/seelkby/p...')
+#5 /home/seelkby/public_html/wp-load.php(50): require_once('/home/seelkby/p...')
+#6 /home/seelkby/public_html/wp-admin/admin.php(34): require_once('/home/seelkby/p...')
+#7 {main}
+  thrown in /home/seelkby/public_html/wp-includes/class-wp-textdomain-registry.php on line 103
+[09-Dec-2022 15:49:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function trailingslashit() in /home/seelkby/public_html/wp-includes/class-wp-textdomain-registry.php:103
+Stack trace:
+#0 /home/seelkby/public_html/wp-includes/l10n.php(784): WP_Textdomain_Registry->set('default', 'ru_RU', '/home/seelkby/p...')
+#1 /home/seelkby/public_html/wp-includes/load.php(1401): load_textdomain('default', '/home/seelkby/p...', 'ru_RU')
+#2 /home/seelkby/public_html/wp-includes/load.php(278): wp_load_translations_early()
+#3 /home/seelkby/public_html/wp-settings.php(74): wp_maintenance()
+#4 /home/seelkby/public_html/wp-config.php(97): require_once('/home/seelkby/p...')
+#5 /home/seelkby/public_html/wp-load.php(50): require_once('/home/seelkby/p...')
+#6 /home/seelkby/public_html/wp-admin/admin.php(34): require_once('/home/seelkby/p...')
+#7 {main}
+  thrown in /home/seelkby/public_html/wp-includes/class-wp-textdomain-registry.php on line 103
+[09-Dec-2022 15:49:30 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function trailingslashit() in /home/seelkby/public_html/wp-includes/class-wp-textdomain-registry.php:103
+Stack trace:
+#0 /home/seelkby/public_html/wp-includes/l10n.php(784): WP_Textdomain_Registry->set('default', 'ru_RU', '/home/seelkby/p...')
+#1 /home/seelkby/public_html/wp-includes/load.php(1401): load_textdomain('default', '/home/seelkby/p...', 'ru_RU')
+#2 /home/seelkby/public_html/wp-includes/load.php(278): wp_load_translations_early()
+#3 /home/seelkby/public_html/wp-settings.php(74): wp_maintenance()
+#4 /home/seelkby/public_html/wp-config.php(97): require_once('/home/seelkby/p...')
+#5 /home/seelkby/public_html/wp-load.php(50): require_once('/home/seelkby/p...')
+#6 /home/seelkby/public_html/wp-admin/admin.php(34): require_once('/home/seelkby/p...')
+#7 {main}
+  thrown in /home/seelkby/public_html/wp-includes/class-wp-textdomain-registry.php on line 103
+[09-Dec-2022 15:49:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function trailingslashit() in /home/seelkby/public_html/wp-includes/class-wp-textdomain-registry.php:103
+Stack trace:
+#0 /home/seelkby/public_html/wp-includes/l10n.php(784): WP_Textdomain_Registry->set('default', 'ru_RU', '/home/seelkby/p...')
+#1 /home/seelkby/public_html/wp-includes/load.php(1401): load_textdomain('default', '/home/seelkby/p...', 'ru_RU')
+#2 /home/seelkby/public_html/wp-includes/load.php(278): wp_load_translations_early()
+#3 /home/seelkby/public_html/wp-settings.php(74): wp_maintenance()
+#4 /home/seelkby/public_html/wp-config.php(97): require_once('/home/seelkby/p...')
+#5 /home/seelkby/public_html/wp-load.php(50): require_once('/home/seelkby/p...')
+#6 /home/seelkby/public_html/wp-admin/admin.php(34): require_once('/home/seelkby/p...')
+#7 {main}
+  thrown in /home/seelkby/public_html/wp-includes/class-wp-textdomain-registry.php on line 103
+[09-Dec-2022 15:49:31 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function trailingslashit() in /home/seelkby/public_html/wp-includes/class-wp-textdomain-registry.php:103
+Stack trace:
+#0 /home/seelkby/public_html/wp-includes/l10n.php(784): WP_Textdomain_Registry->set('default', 'ru_RU', '/home/seelkby/p...')
+#1 /home/seelkby/public_html/wp-includes/load.php(1401): load_textdomain('default', '/home/seelkby/p...', 'ru_RU')
+#2 /home/seelkby/public_html/wp-includes/load.php(278): wp_load_translations_early()
+#3 /home/seelkby/public_html/wp-settings.php(74): wp_maintenance()
+#4 /home/seelkby/public_html/wp-config.php(97): require_once('/home/seelkby/p...')
+#5 /home/seelkby/public_html/wp-load.php(50): require_once('/home/seelkby/p...')
+#6 /home/seelkby/public_html/wp-admin/admin.php(34): require_once('/home/seelkby/p...')
+#7 {main}
+  thrown in /home/seelkby/public_html/wp-includes/class-wp-textdomain-registry.php on line 103
+[09-Dec-2022 16:06:26 UTC] WordPress database error Duplicate column name 'mobile' for query ALTER TABLE `wp_litespeed_url_file`
+				ADD COLUMN `mobile` tinyint(4) NOT NULL COMMENT "mobile=1",
+				ADD COLUMN `webp` tinyint(4) NOT NULL COMMENT "webp=1"
+			 made by require_once('wp-admin/admin.php'), require_once('wp-load.php'), require_once('wp-config.php'), require_once('wp-settings.php'), include_once('/plugins/litespeed-cache/litespeed-cache.php'), run_litespeed_cache, LiteSpeed\Root::cls, LiteSpeed\Core->__construct, LiteSpeed\Conf->init, LiteSpeed\Conf->_conf_db_init, LiteSpeed\Data->conf_upgrade, call_user_func, litespeed_update_5_3

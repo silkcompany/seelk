@@ -1,1 +1,1 @@
-<a class="messages-link icon-ChatTeardropText"  href="http://silk/account/messages/"></a>
+<a class="messages-link icon-ChatTeardropText"  href="https://seelk.by/account/messages/"></a>

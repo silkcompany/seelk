@@ -1,0 +1,394 @@
+/* -------- Switch Styles ------------*/
+.wp-dark-mode-switcher,
+.wp-dark-mode-switcher {
+    display: inline-flex;
+    align-items: center;
+    z-index: 30;
+    position: relative;
+    background: transparent !important;
+    text-align: left;
+}
+
+.wp-dark-mode-switcher > i {
+    margin-right: 7px !important;
+}
+
+.wp-dark-mode-moon-o {
+    display: none;
+}
+
+.wp-dark-mode-switcher label,
+.wp-dark-mode-switcher .toggle {
+    height: 26px;
+    border-radius: 100px;
+    display: inline-block;
+}
+
+.wp-dark-mode-switcher label {
+    background-color: #eee;
+    position: relative;
+    cursor: pointer;
+    width: 100px;
+}
+
+.wp-dark-mode-switcher .toggle {
+    position: absolute;
+    width: 50%;
+    background-color: #fff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, .15);
+    transition: transform .3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.wp-dark-mode-switcher .modes {
+    width: 74%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    user-select: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wp-dark-mode-switcher .modes p {
+    font-size: 12px;
+    font-weight: 500;
+    color: #555;
+    margin: 0;
+}
+
+.wp-dark-mode-switcher .dark {
+    opacity: .5;
+}
+
+.wp-dark-mode-switch {
+    display: none !important;
+}
+
+/*----------- btn style2 -------------*/
+.wp-dark-mode-switcher.style-2 label,
+.wp-dark-mode-switcher.style-2 .toggle {
+    height: 34px;
+}
+
+.wp-dark-mode-switcher.style-2 label {
+    width: 70px;
+}
+
+.wp-dark-mode-switcher.style-2 .modes img {
+    max-width: 18px;
+    max-height: 18px;
+}
+
+/*----------- btn style-3 -------------*/
+.wp-dark-mode-switcher.style-3 > div{
+    display: flex;
+    align-items: center;
+}
+
+.wp-dark-mode-switcher.style-3 img {
+    max-height: 18px;
+    max-width: 18px;
+}
+
+.wp-dark-mode-switcher.style-3 .moon-light,
+.wp-dark-mode-switcher.style-3 .sun-light {
+    display: none;
+}
+
+.wp-dark-mode-switcher.style-3 label {
+    height: 30px;
+}
+
+.wp-dark-mode-switcher.style-3 .toggle {
+    height: 25px;
+    width: 25px;
+    top: 50%;
+    transform: translateY(-50%) !important;
+    left: 2px;
+    transition: all .2s ease;
+}
+
+.wp-dark-mode-switcher.style-3 label {
+    width: 60px;
+    background: #EE5913;
+    margin: 0 7px;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-3 .toggle {
+    right: 2px;
+    background: #fff;
+    left: auto;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-3 .moon-light,
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-3 .sun-light {
+    display: block;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-3 .moon-dark,
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-3 .sun-dark {
+    display: none;
+}
+
+/*----------- btn style-4 -------------*/
+.wp-dark-mode-switcher.style-4 img {
+    max-height: 16px;
+    max-width: 16px;
+    position: absolute;
+}
+
+.wp-dark-mode-switcher.style-4 > div {
+    display: flex;
+    align-items: center;
+}
+
+.wp-dark-mode-switcher.style-4 span {
+    font-size: 12px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.wp-dark-mode-switcher.style-4 label {
+    margin: 0 7px;
+    width: 60px;
+    background: #EE5913;
+}
+
+.wp-dark-mode-switcher.style-4 label .modes {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    left: 0;
+    padding: 5px;
+    transform: none;
+    align-items: center;
+}
+
+.wp-dark-mode-switcher.style-4 label .modes .dark {
+    display: none;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-4 label .modes .light {
+    display: none;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-4 label .modes .dark {
+    display: block;
+    right: 5px;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-4 label {
+    background: #0050BB;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-4 p {
+    color: #fff;
+}
+
+/*----------- btn style-5 -------------*/
+.wp-dark-mode-switcher.style-5 img {
+    max-height: 16px;
+    max-width: 16px;
+    position: absolute;
+}
+
+.wp-dark-mode-switcher.style-5 p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.wp-dark-mode-switcher.style-5 label {
+    margin: 0 7px;
+    width: 60px;
+    background: #EE5913;
+}
+
+.wp-dark-mode-switcher.style-5 label .modes {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    left: 0;
+    padding: 5px;
+    transform: none;
+    align-items: center;
+}
+
+.wp-dark-mode-switcher.style-5 label .modes .dark {
+    display: none;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-5 label .modes .light {
+    display: none;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-5 label .modes .dark {
+    display: block;
+    right: 5px;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-5 label {
+    background: #0050BB;
+}
+
+/*----------- btn style-6 -------------*/
+.wp-dark-mode-switcher.style-6 img {
+    max-height: 20px;
+    max-width: 20px;
+    position: absolute;
+    background: #EE5913;
+    padding: 4px;
+    border-radius: 12px;
+}
+
+.wp-dark-mode-switcher.style-6 p {
+    font-size: 12px;
+    margin-bottom: 0;
+}
+
+.wp-dark-mode-switcher.style-6 label {
+    margin: 0 7px;
+    width: 80px;
+    background: #FFC107;
+    height: 8px;
+}
+
+.wp-dark-mode-switcher.style-6 label .modes {
+    top: 0;
+    width: 100%;
+    height: 100%;
+    right: 0;
+    left: 0;
+    padding: 0 10px;
+    transform: none;
+    align-items: center;
+}
+
+.wp-dark-mode-switcher.style-6 label .modes .dark {
+    display: none;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-6 label .modes .light {
+    display: none;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-6 label .modes .dark {
+    display: block;
+    right: 10px;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-6 label {
+    background: #0050BB;
+}
+
+
+/*-------------- btn style 7 --------------*/
+.wp-dark-mode-switcher.style-7 label {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #555;
+    border-radius: 15px;
+}
+
+.wp-dark-mode-switcher.style-7 .modes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wp-dark-mode-switcher.style-7 img {
+    width: 24px;
+}
+
+.wp-dark-mode-switcher.style-7 .dark {
+     display: none;
+ }
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-7 label{
+    background: #fff;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-7 .light {
+     display: none;
+ }
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher.style-7 .dark {
+    display: block;
+}
+
+
+/*---------------- Toggle -----------------------*/
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher .toggle {
+    transform: translateX(100%);
+    background-color: #34323D;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher .wp-dark-mode-light-up {
+    display: none;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher .wp-dark-mode-moon-o {
+    display: block;
+}
+
+[class="wp-dark-mode-switch"]:checked + .wp-dark-mode-switcher .dark {
+    opacity: 1;
+    color: #fff !important;
+}
+
+
+/** ------- Main Styles --------- **/
+html.wp-dark-mode-active :not(.wp-dark-mode-ignore):not(mark):not(code):not(pre):not(ins):not(option):not(input):not(select):not(textarea):not(button):not(a):not(video):not(canvas):not(progress):not(iframe):not(svg):not(path) {
+    background-color: #1B2836 !important;
+    color: #fff !important;
+    border-color: #459BE6 !important;
+}
+
+html.wp-dark-mode-active a:not(.wp-dark-mode-ignore),
+html.wp-dark-mode-active a *:not(.wp-dark-mode-ignore) {
+    background-color: transparent !important;
+    color: #459BE6 !important;
+}
+
+html.wp-dark-mode-active a:active,
+html.wp-dark-mode-active a:active *,
+html.wp-dark-mode-active a:visited,
+html.wp-dark-mode-active a:visited * {
+    color: #459BE6 !important;
+    border-color: #459BE6 !important;
+}
+
+
+html.wp-dark-mode-active button:not(#collapse-button),
+html.wp-dark-mode-active iframe,
+html.wp-dark-mode-active iframe *,
+html.wp-dark-mode-active input,
+html.wp-dark-mode-active input[type="button"],
+html.wp-dark-mode-active input[type="checkebox"],
+html.wp-dark-mode-active input[type="date"],
+html.wp-dark-mode-active input[type="datetime-local"],
+html.wp-dark-mode-active input[type="email"],
+html.wp-dark-mode-active input[type="image"],
+html.wp-dark-mode-active input[type="month"],
+html.wp-dark-mode-active input[type="number"],
+html.wp-dark-mode-active input[type="range"],
+html.wp-dark-mode-active input[type="reset"],
+html.wp-dark-mode-active input[type="search"],
+html.wp-dark-mode-active input[type="submit"],
+html.wp-dark-mode-active input[type="tel"],
+html.wp-dark-mode-active input[type="text"],
+html.wp-dark-mode-active input[type="time"],
+html.wp-dark-mode-active input[type="url"],
+html.wp-dark-mode-active input[type="week"],
+html.wp-dark-mode-active select,
+html.wp-dark-mode-active textarea,
+html.wp-dark-mode-active i:not(.wp-dark-mode-ignore) {
+    background-color: rgb(53, 66, 80) !important;
+    color: #fff !important;
+    border-color: rgb(53, 66, 80) !important;
+}
